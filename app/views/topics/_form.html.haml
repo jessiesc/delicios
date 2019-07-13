@@ -1,0 +1,4 @@
+= form_with model: topic do |form|
+  = form.text_field :name, placeholder: "Title"
+  = form.trix_editor :description, placeholder: "Text"
+  = form.submit

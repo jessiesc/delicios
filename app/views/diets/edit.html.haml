@@ -1,0 +1,6 @@
+%h1 Diets#edit
+%h3 Update Diet Details
+= form_with model: @diet do |form|
+  = form.text_field :name, placeholder: "name"
+  = form.text_field :description, placeholder: "description"
+  = form.submit

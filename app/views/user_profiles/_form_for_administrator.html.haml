@@ -1,0 +1,9 @@
+.container-fluid
+  .row
+    .offset-md-4.col-md-4
+      = simple_form_for(profile, url: user_profiles_path) do |f|
+          = f.input :first_name
+          = f.input :last_name
+          = f.input :nickname
+          = f.input :how_heard
+          = f.submit "Update", class: 'btn btn-primary'

@@ -1,0 +1,11 @@
+%h1 Diet#new
+%h3 Create a Diet
+= form_with model: @diet do |form|
+  
+  = form.label :name
+  = form.text_field :name
+
+  = form.label :description
+  = form.text_field :description
+  
+  = form.submit

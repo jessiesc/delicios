@@ -1,0 +1,19 @@
+.container-fluid
+  .row
+    .offset-md-4.col-md-4
+      %h2 Register as Nutritionist
+      %hr/
+      = simple_form_for(resource, url: user_registration_path(role: :nutritionist)) do |f|
+        = devise_error_messages!
+        = f.input :email, input_html: { autocomplete: 'email', autofocus: true }
+        = f.input :password, input_html: { autocomplete: 'current-password' }
+        = f.simple_fields_for :profile, resource.build_profile do |c|
+          = c.input :first_name
+          = c.input :last_name
+          = c.input :work
+          = c.input :experience_years
+          = c.input :how_heard
+          = c.input :birthday, as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year,
+                              order: [:day, :month, :year]
+          = f.submit "Register", class: 'btn btn-primary'

@@ -1,0 +1,4 @@
+%h1= @allergy.name
+%h4
+  "#{@allergy.description}"
+= link_to 'Remove', @allergy, method: :delete

@@ -1,0 +1,6 @@
+= f.simple_fields_for :ingredients do |ingredient|
+  .nested-fields
+    .field
+      = ingredient.input :weight, label: 'Weight'
+      = ingredient.input :product_id, collection: Product.pluck(:name, :id), placeholder: true
+    = link_to_remove_association "remove ingredient", f

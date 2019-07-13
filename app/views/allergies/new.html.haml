@@ -1,0 +1,11 @@
+%h1 Allergy#new
+%h3 Create a Allergy
+= form_with model: @allergy do |form|
+  
+  = form.label :name
+  = form.text_field :name
+
+  = form.label :description
+  = form.text_field :description
+  
+  = form.submit

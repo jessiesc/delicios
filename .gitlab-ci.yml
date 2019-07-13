@@ -1,0 +1,26 @@
+image: ruby:2.6.3
+
+services:
+  - postgres:latest
+
+variables:
+  RAILS_MAX_THREADS: 5
+  DATABASE_HOST: postgres
+  DATABASE_NAME: delicio
+
+before_script:
+    - apt-get update -qq && apt-get install -y -qq postgresql postgresql-contrib libpq-dev libv8-dev cmake nodejs
+    - ruby -v
+    - which ruby
+    - gem install bundler --no-document
+    - bundle install --jobs $(nproc)  "${FLAGS[@]}"
+    - rake db:create
+    - rake db:schema:load
+
+rubocop:
+  script:
+    - bundle exec rubocop
+
+rspec:
+  script:
+    - bundle exec rspec

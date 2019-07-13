@@ -1,0 +1,15 @@
+%div
+  %strong
+    Name:
+  = @product.name
+%div
+  %strong
+    Category:
+  = @product.category
+%div
+  %strong
+    Calories:
+  = "#{@product.kal} kal per 100g of product"
+%div
+  = link_to 'Edit', edit_product_path
+

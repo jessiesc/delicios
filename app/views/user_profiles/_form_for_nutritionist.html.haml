@@ -1,0 +1,14 @@
+.container-fluid
+  .row
+    .offset-md-4.col-md-4
+      = simple_form_for(profile, url: user_profiles_path) do |f|
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :work
+        = f.input :experience_years
+        = f.input :how_heard
+        = f.input :birthday, as: :date, start_year: Date.today.year - 90,
+                            end_year: Date.today.year,
+                            order: [:day, :month, :year]
+        = f.submit "Update", class: 'btn btn-primary'
+

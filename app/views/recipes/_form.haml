@@ -1,0 +1,9 @@
+= simple_form_for @recipe do |f|
+  = f.input :name, label: 'Recipe name'
+  = f.input :description, label: 'Description'
+  = f.input :preparation_kind, label: 'Preparation_kind', collection: Recipe::PREPARATION_KINDS
+  = f.input :preparation_time, label: 'Preparation_time'
+  = render 'ingredient_fields', f: f
+  .links
+    = link_to_add_association 'Add ingredient', f, :ingredients
+  = f.submit 'Add recipe', class: 'btn btn-primary'

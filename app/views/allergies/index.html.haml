@@ -1,0 +1,7 @@
+%table
+  - @allergies.each do |allergy|
+    %tr
+      %td= link_to allergy.name, allergy_path(allergy)
+      %td= button_to 'Edit', edit_allergy_path(allergy), method: 'get'
+      %td= button_to 'Remove', allergy_path(allergy), method: 'delete'
+= link_to "Add a New Allergy", new_allergy_path

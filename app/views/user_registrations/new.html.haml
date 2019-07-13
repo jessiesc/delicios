@@ -1,0 +1,5 @@
+%h6
+  - if params[:role]&.to_sym == :client
+    = render 'client_form', resource: resource
+  - elsif params[:role]&.to_sym == :nutritionist
+    = render 'nutritionist_form', resource: resource

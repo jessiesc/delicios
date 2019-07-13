@@ -1,0 +1,7 @@
+%table
+  - @diets.each do |diet|
+    %tr
+      %td= link_to diet.name, diet_path(diet)
+      %td= button_to 'Edit', edit_diet_path(diet), method: 'get'
+      %td= button_to 'Remove', diet_path(diet), method: 'delete'
+= link_to "Add a New Diet", new_diet_path

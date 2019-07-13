@@ -1,0 +1,7 @@
+= form_with model: article do |form|
+  = form.select :topic_id, options_for_select(      |
+    Topic.all.map{ |topic| [topic.name, topic.id]}) |
+  = form.hidden_field :user_id, value: current_user.id
+  = form.text_field :title, placeholder: "Title"
+  = form.trix_editor :content, placeholder: "Text"
+  = form.submit

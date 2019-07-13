@@ -1,0 +1,6 @@
+%h1 Allergies#edit
+%h3 Update Allergy Details
+= form_with model: @allergy do |form|
+  = form.text_field :name, placeholder: "name"
+  = form.text_field :description, placeholder: "description"
+  = form.submit

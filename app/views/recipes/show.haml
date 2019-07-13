@@ -1,0 +1,24 @@
+%div
+  %strong
+    Name:
+  = @recipe.name
+%div
+  %strong
+    Desription:
+  = @recipe.description
+%div
+  %strong
+    Preparation kind:
+  = @recipe.preparation_kind
+%div
+  %strong
+    Preparation time
+  = @recipe.preparation_time
+%div
+  %strong
+    Ingridients
+  .ingredients
+    %ul
+      = render partial: 'ingredient_preview', collection: @recipe.ingredients, as: :ingredient
+%div
+  = link_to 'Edit', edit_recipe_path

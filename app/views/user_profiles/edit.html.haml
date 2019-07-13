@@ -1,0 +1,8 @@
+%h2 Edit page
+- if current_user.instance_of?(Client)
+  = render partial: "form_for_client", locals: { profile: @profile }
+- elsif current_user.instance_of?(Nutritionist)
+  = render partial: "form_for_nutritionist", locals: { profile: @profile }
+- else
+  = render partial: "form_for_administrator", locals: { profile: @profile }
+  

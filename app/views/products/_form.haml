@@ -1,0 +1,5 @@
+= simple_form_for @product do |f|
+  = f.input :name, label: 'Product name'
+  = f.input :category, label: 'Category of product', collection: Product::CATEGORIES
+  = f.input :kal, label: 'Calories'
+  = f.submit 'Add product', class: 'btn btn-primary'

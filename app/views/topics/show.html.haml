@@ -1,0 +1,7 @@
+%h4= @topic.name
+%p= @topic.description.html_safe
+= link_to 'Remove', @topic, method: :delete
+= link_to 'Edit', edit_topic_path(@topic), method: 'get'
+= link_to 'Back to all topics', topics_path
+= render partial: 'articles/articles_preview', |
+  collection: @topic.articles, as: :article    |

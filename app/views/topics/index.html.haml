@@ -1,0 +1,4 @@
+%ul
+  - @topics.each do |topic|
+    %li= link_to topic.name, topic_path(topic)                    |
+= link_to "Add a New topic", new_topic_path

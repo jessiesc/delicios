@@ -1,0 +1,11 @@
+%h3 Update Recipe
+= simple_form_for @recipe do |f|
+  = f.input :name, placeholder: "name"
+  = f.input :description, placeholder: "description"
+  = f.input :preparation_kind,
+    collection: Recipe::PREPARATION_KINDS, placeholder: "preparation_kind"
+  = f.input :preparation_time, placeholder: "preparation_time"
+  = render 'ingredient_fields', f: f
+  .links
+    = link_to_add_association 'Add ingredient', f, :ingredients
+  = f.submit 'Submit', class: 'btn btn-primary'
